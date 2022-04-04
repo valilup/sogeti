@@ -1,25 +1,40 @@
 package services;
 
-import com.sun.corba.se.spi.ior.IdentifiableFactory;
 import cucumber.pages.HeaderPage;
-import cucumber.utils.Helpers;
 import framework.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import java.util.Locale;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
 
 import static cucumber.utils.Helpers.click;
 import static cucumber.utils.Helpers.hoverOn;
 
 public class HeaderServices extends BaseClass {
-    public HeaderServices() {
-    }
 
     public HeaderServices(WebDriver driver) {
         PageFactory.initElements(driver, this);
+    }
+
+    private static void verifyActiveLinks(String urlLink) throws IOException {
+        URL url = new URL(urlLink);
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setConnectTimeout(3000);
+        httpURLConnection.connect();
+
+        Assert.assertEquals(httpURLConnection.getResponseCode(), 200);
+        //TODO e ok sa las aici printurile astea sau crezi ca nu?
+        if (httpURLConnection.getResponseCode() == 200) {
+            System.out.println(urlLink + " - " + httpURLConnection.getResponseMessage());
+        }
+        if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
+            System.out.println(urlLink + " - " + httpURLConnection.getResponseMessage() + " - " + HttpURLConnection.HTTP_NOT_FOUND);
+        }
     }
 
     public void hoverOver(String object) throws Exception {
@@ -44,6 +59,9 @@ public class HeaderServices extends BaseClass {
             case "automation link":
                 elToClick = headerPage.automationLink;
                 break;
+            case "worldwide globe icon":
+                elToClick = headerPage.worldwideGlobeIcon;
+                break;
             default:
                 throw new Exception("Unknown button " + button + " to click on");
         }
@@ -66,5 +84,17 @@ public class HeaderServices extends BaseClass {
         }
 
         Assert.assertTrue(elementToCheck.getAttribute(attribute).contains(value));
+    }
+
+    public void verifyAllTheLinksAreWorking() throws IOException {
+        HeaderPage headerPage = new HeaderPage(driver);
+
+        List<WebElement> links = headerPage.sogetiSpecificCountryLinks;
+
+        for (int x = 0; x < links.size(); x++) {
+            WebElement element = links.get(x);
+            String url = element.getAttribute("href");
+            verifyActiveLinks(url);
+        }
     }
 }

@@ -2,6 +2,8 @@ package cucumber.utils;
 
 import framework.BaseClass;
 import io.cucumber.java.en_old.Ac;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,8 +28,11 @@ public class Helpers extends BaseClass {
         actions.moveToElement(element).perform();
     }
 
-    public static void isVisible(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutDuration));
-        wait.until(ExpectedConditions.visibilityOf(element));
+    public static void scrollInToView(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", element);
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_UP);
+        actions.build().perform();
     }
 }

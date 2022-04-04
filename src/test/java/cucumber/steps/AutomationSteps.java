@@ -2,6 +2,7 @@ package cucumber.steps;
 
 import framework.BaseClass;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import services.AutomationServices;

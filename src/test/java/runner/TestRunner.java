@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features="src/test/resources/Features",
         glue={"cucumber/steps"},
         publish = true,
-        plugin = {"pretty", "html:target/HtmlReports"})
+        plugin = {"pretty", "html:target/HtmlReports.html"})
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }
