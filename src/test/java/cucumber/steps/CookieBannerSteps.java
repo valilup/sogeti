@@ -7,9 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 import services.CookieBannerServices;
 
 public class CookieBannerSteps extends BaseClass {
-    public CookieBannerSteps(){}
+    public CookieBannerSteps() {
+    }
 
-    public CookieBannerSteps(WebDriver driver){
+    public CookieBannerSteps(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 

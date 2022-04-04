@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 
-
 import static cucumber.utils.RestAPI.*;
 
 public class ApiRequests extends BaseClass {
@@ -13,7 +12,7 @@ public class ApiRequests extends BaseClass {
 
     @Given("I perform a GET request to {string} {string} {string}")
     public void iPerformAGETRequestTo(String country, String postalCode, String arg2) {
-        response = GET(country+"/"+postalCode);
+        response = GET(country + "/" + postalCode);
         response.prettyPrint();
     }
 

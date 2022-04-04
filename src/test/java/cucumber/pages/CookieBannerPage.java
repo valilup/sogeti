@@ -7,13 +7,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CookieBannerPage extends BaseClass {
-    public CookieBannerPage() {}
+    @FindBy(className = "acceptCookie")
+    public WebElement allowAllCookiesButton;
+
+    public CookieBannerPage() {
+    }
 
     public CookieBannerPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(className = "acceptCookie")
-    public WebElement allowAllCookiesButton;
 
 }

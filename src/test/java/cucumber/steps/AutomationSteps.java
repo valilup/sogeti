@@ -2,15 +2,15 @@ package cucumber.steps;
 
 import framework.BaseClass;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import services.AutomationServices;
 
 public class AutomationSteps extends BaseClass {
-    public AutomationSteps(){}
+    public AutomationSteps() {
+    }
 
-    public AutomationSteps(WebDriver driver){
+    public AutomationSteps(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
