@@ -2,11 +2,12 @@ package services;
 
 
 import cucumber.pages.CookieBannerPage;
-import cucumber.utils.Helpers;
 import framework.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
+import static cucumber.utils.Helpers.click;
 
 public class CookieBannerServices extends BaseClass {
     public CookieBannerServices() {
@@ -28,6 +29,6 @@ public class CookieBannerServices extends BaseClass {
             default:
                 throw new Exception("Unknown button " + button + " to click on");
         }
-        Helpers.click(elToClick);
+        click(elToClick);
     }
 }

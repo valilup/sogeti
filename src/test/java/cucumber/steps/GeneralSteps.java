@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import services.GeneralServices;
 
 public class GeneralSteps extends BaseClass {
+
     public GeneralSteps() {
     }
 

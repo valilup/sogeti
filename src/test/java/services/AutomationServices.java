@@ -8,10 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class AutomationServices extends BaseClass {
+
+    public AutomationServices() {
+    }
+
     public AutomationServices(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-
 
     public void verifyIsVisible(String element) throws Exception {
         AutomationPage automationPage = new AutomationPage(driver);

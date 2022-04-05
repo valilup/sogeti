@@ -1,8 +1,6 @@
 package cucumber.utils;
 
 import framework.BaseClass;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,13 +22,5 @@ public class Helpers extends BaseClass {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
-    }
-
-    public static void scrollInToView(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true)", element);
-        Actions actions = new Actions(driver);
-        actions.sendKeys(Keys.ARROW_UP);
-        actions.build().perform();
     }
 }

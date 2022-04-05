@@ -10,13 +10,11 @@ import static io.restassured.RestAssured.given;
 
 public class RestAPI {
 
-    private static Response response;
     private static final String baseUrl = "http://api.zippopotam.us/";
+    private static Response response;
 
     public static Response GET(String url) {
-        response =
-                given()
-                        .get(baseUrl + url);
+        response = given().get(baseUrl + url);
         return response;
     }
 
@@ -35,6 +33,11 @@ public class RestAPI {
     public static String getSpecificResponseValue(Response response, String key) {
         JsonPath jsonPath = response.jsonPath();
         return jsonPath.getString(key);
+    }
+
+    public static String getResponseAsString(Response response){
+        JsonPath jsonPath = response.jsonPath();
+        return jsonPath.get();
     }
 
     public static void checkSpecificResponseValueIsCorrect(Response response, String key, String value) {

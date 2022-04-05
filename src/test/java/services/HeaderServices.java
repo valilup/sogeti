@@ -17,24 +17,19 @@ import static cucumber.utils.Helpers.hoverOn;
 
 public class HeaderServices extends BaseClass {
 
+    public HeaderServices(){}
+
     public HeaderServices(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    private static void verifyActiveLinks(String urlLink) throws IOException {
+    private static void verifyResponseOfLinkIsOk(String urlLink) throws IOException {
         URL url = new URL(urlLink);
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setConnectTimeout(3000);
         httpURLConnection.connect();
 
         Assert.assertEquals(httpURLConnection.getResponseCode(), 200);
-        //TODO e ok sa las aici printurile astea sau crezi ca nu?
-        if (httpURLConnection.getResponseCode() == 200) {
-            System.out.println(urlLink + " - " + httpURLConnection.getResponseMessage());
-        }
-        if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND) {
-            System.out.println(urlLink + " - " + httpURLConnection.getResponseMessage() + " - " + HttpURLConnection.HTTP_NOT_FOUND);
-        }
     }
 
     public void hoverOver(String object) throws Exception {
@@ -94,7 +89,7 @@ public class HeaderServices extends BaseClass {
         for (int x = 0; x < links.size(); x++) {
             WebElement element = links.get(x);
             String url = element.getAttribute("href");
-            verifyActiveLinks(url);
+            verifyResponseOfLinkIsOk(url);
         }
     }
 }
