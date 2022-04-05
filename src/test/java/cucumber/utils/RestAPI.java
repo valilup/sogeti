@@ -2,6 +2,10 @@ package cucumber.utils;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
@@ -35,12 +39,25 @@ public class RestAPI {
         return jsonPath.getString(key);
     }
 
-    public static String getResponseAsString(Response response){
-        JsonPath jsonPath = response.jsonPath();
-        return jsonPath.get();
-    }
-
     public static void checkSpecificResponseValueIsCorrect(Response response, String key, String value) {
         Assert.assertEquals(getSpecificResponseValue(response, key), value);
+    }
+
+    public static void checkThatPostalCodeHasPlaceName(Response response, String postalCode, String placeName) throws ParseException {
+        JSONParser parser = new JSONParser();
+        Object object = parser.parse(response.asString());
+        JSONObject responseJsonObject = (JSONObject) object;
+
+        JSONArray placesJsonArray = (JSONArray) responseJsonObject.get("places");
+        for (int i = 0; i < placesJsonArray.size(); i++) {
+            JSONObject jsonPlaces = (JSONObject) placesJsonArray.get(i);
+
+            String postCode = (String) jsonPlaces.get("post code");
+            String placesPlaceName = (String) jsonPlaces.get("place name");
+
+            if (postCode.equals(postalCode)){
+                Assert.assertEquals(placesPlaceName, placeName);
+            }
+        }
     }
 }

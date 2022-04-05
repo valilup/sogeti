@@ -45,13 +45,8 @@
             <version>7.5</version>
             <scope>test</scope>
         </dependency>
-<!--        tobedeleted IF THE STUFF WORKS-->
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20220320</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+<!--        this dependency is used for navigating through a JSONObject-->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
