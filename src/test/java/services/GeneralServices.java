@@ -3,6 +3,7 @@ package services;
 import framework.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 
 public class GeneralServices extends BaseClass {
@@ -25,5 +26,9 @@ public class GeneralServices extends BaseClass {
                 throw new Exception("Unknown URL: " + url);
         }
         driver.get(url);
+    }
+
+    public void checkUrlContains(String partialUrl) {
+       Assert.assertTrue(driver.getCurrentUrl().contains(partialUrl.toLowerCase()));
     }
 }

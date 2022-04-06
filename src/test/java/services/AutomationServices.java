@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import static cucumber.utils.Helpers.scrollTo;
+
 public class AutomationServices extends BaseClass {
 
     public AutomationServices() {
@@ -29,5 +31,20 @@ public class AutomationServices extends BaseClass {
 
         }
         Assert.assertTrue(elementToCheck.isDisplayed());
+    }
+
+    public void scrollToElement(String element) throws Exception {
+        AutomationPage automationPage = new AutomationPage(driver);
+        WebElement elementToScrollTo;
+
+        switch (element.toLowerCase()) {
+            case "contact form":
+                elementToScrollTo = automationPage.contactUsFormTitle;
+                break;
+            default:
+                throw new Exception("Unknown element: " + element + " to scroll to");
+        }
+        scrollTo(elementToScrollTo);
+
     }
 }

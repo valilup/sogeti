@@ -55,4 +55,4 @@ For this project to run you must have installed a version of Java8 or higher on 
 ###HOW TO RUN PROJECT
 First time run -> ```mvn clean test``` 
 Run All the tests with report generation ```mvn clean verify```
-Run individual tests from 
+Run individual tests from IntelIJ by clicking on the Green arrow

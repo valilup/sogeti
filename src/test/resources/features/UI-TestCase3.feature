@@ -3,9 +3,9 @@
   #2. Click the Worldwide Dropdown link in Page Header.
   #3. A Country dropdown list is displayed. These are the Country specific Sogeti links. 4. Assert that all the Country specific Sogeti links are working.
 
-  @cucumber
   Feature:Check that the all the country specific Sogeti links are working
 
+    @cucumber
     Scenario: Check the specific Sogeti links are working
       Given I navigate to the "Sogeti homepage" page
       When I click on the "Allow all cookies" button on the Cookies Banner

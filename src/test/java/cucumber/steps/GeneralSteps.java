@@ -1,6 +1,7 @@
 package cucumber.steps;
 
 import framework.BaseClass;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -19,6 +20,12 @@ public class GeneralSteps extends BaseClass {
     public void iNavigateToThePage(String site) throws Exception {
         GeneralServices generalServices = new GeneralServices(driver);
         generalServices.navigateTo(site);
+    }
+
+    @And("I verify that the current url contains {string} text")
+    public void iVerifyThatTheCurrentUrlContainsText(String partialUrl) {
+        GeneralServices generalServices = new GeneralServices(driver);
+        generalServices.checkUrlContains(partialUrl);
     }
 }
 
