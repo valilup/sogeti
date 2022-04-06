@@ -1,8 +1,8 @@
-#Pre-requisits
+# Pre-requisits
 Before building the project please have the following tools installed.
 
-###Java
-#####Windows
+### Java
+###### Windows
 For this project to run you must have installed a version of Java8 or higher on your machine.
 
 1. [Download JAVA for Windows](https://www.oracle.com/java/technologies/downloads/#java8-windows)
@@ -11,7 +11,7 @@ For this project to run you must have installed a version of Java8 or higher on 
 4. Add jdkxxx/bin to PATH system environment variable
 5. Restart machine and check that Java was installed in the command line with java -version (javac -version) if it prints the version java is configured correctly
 
-#####Mac
+###### Mac
 1. Check if Java is installed on your mac 
    1. Open Terminal
    2. Insert ```java -version```
@@ -44,3 +44,15 @@ For this project to run you must have installed a version of Java8 or higher on 
 6. Add the the path to the bin folder ```example C:\apache-maven-3.8.5\bin```
 7. Click OK and Apply
 8. Open the Command Line and type in the command ```mvn -v```  and it should return the maven version
+
+###Git
+
+
+### IntelIJ
+
+
+
+###HOW TO RUN PROJECT
+First time run -> ```mvn clean test``` 
+Run All the tests with report generation ```mvn clean verify```
+Run individual tests from 

@@ -1,5 +1,5 @@
 Feature: API Tests
-
+  @API
   Scenario: API Test 1
     Given I perform a GET request to the "de/bw/stuttgart" url
     Then I verify that the status code is 200
@@ -9,6 +9,7 @@ Feature: API Tests
     Then I verify that the "state" key has the "Baden-Württemberg" value
     Then I verify that the postal code "70597" has the place name "Stuttgart Degerloch"
 
+  @API
   Scenario Outline: API Test 2
     Given I perform a GET request to "<Country>" "<Postal Code>"
     Then I verify that the status code is 200
