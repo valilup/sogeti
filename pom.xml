@@ -46,21 +46,20 @@
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-<!--        this dependency is used for navigating through a JSONObject-->
+        <!--        this dependency is used for navigating through a JSONObject-->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-<!--        this is the library that lets me generate fake valid data-->
+        <!--        this is the library that lets me generate fake valid data-->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-
     </dependencies>
-<!--    cucumber reporting-->
+    <!--    cucumber reporting-->
     <build>
         <plugins>
             <plugin>
