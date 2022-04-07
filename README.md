@@ -1,19 +1,19 @@
-# Pre-requisits
-Before building the project please have the following tools installed:
+# Pre-requisites
+Before building the project, please have the following tools installed:
 1. Java
 2. Maven
 3. Git
-4. IntelIJ
+4. IntelliJ
 
 
 ### Java
 ##### Windows
-For this project to run you must have installed a version of Java8 or higher on your machine.
+For this project to run, you must have installed a version of Java8 or higher on your machine.
 
 1. [Download JAVA for Windows](https://www.oracle.com/java/technologies/downloads/#java8-windows)
 2. Install following the steps in the installer
 3. Create a JAVA_HOME system environment variable and add the path to the jdk folder on your system
-4. Add jdkxxx/bin to PATH system environment variable
+4. Add jdkxxx/bin to the PATH system environment variable
 5. Restart machine and check that Java was installed in the command line with java -version (javac -version) if it prints the version java is configured correctly
 
 ##### Mac
@@ -47,7 +47,7 @@ For this project to run you must have installed a version of Java8 or higher on 
 3. Add maven to System PATH 
 4. On Windows machine go to Environment Variables > System Variables> PATH
 5. Open PATH and click on New
-6. Add the the path to the bin folder ```example C:\apache-maven-3.8.5\bin```
+6. Add the path to the bin folder ```example C:\apache-maven-3.8.5\bin```
 7. Click OK and Apply
 8. Open the Command Line and type in the command ```mvn -v```  and it should return the maven version
 
@@ -68,7 +68,7 @@ For this project to run you must have installed a version of Java8 or higher on 
    - and the version of maven should be returned ```Apache Maven 3.8.5```
 
 ### Git
-#### Windwos
+#### Windows
 1. [Download Git](https://git-scm.com/download/win)
 2. Download ```64-bit Git for Windows Setup``` 
 3. Open the installer and follow the instructions to install 
@@ -80,23 +80,23 @@ For this project to run you must have installed a version of Java8 or higher on 
 1. [Download Git](https://git-scm.com/download/mac)
 2. Click on installer button from the Binary installer section
 3. Click on download
-4. Open the downloade file
-5. Double click on the git-2.xx.x.pkg file
+4. Open the downloaded file
+5. Double-click on the git-2.xx.x.pkg file
 6. The installer should open
 7. Follow the instructions to install
-8. After the instalation is finished open Terminal
+8. After the installation is finished, open Terminal
 9. Type ```git --version```
 10. Should return the example ```git version 2.xx.x```
 
 
-### IntelIJ
+### IntelliJ
 - Installing IntelliJ is similar on mac and windows machines 
 - [Download IntelliJ IDEA Community - Windows](https://www.jetbrains.com/idea/download/#section=windows)
 - [Download IntelliJ IDEA Community - Mac](https://www.jetbrains.com/idea/download/#section=mac)
 - Download the Community edition 
-- Double click on the downloaded installer
+- Double-click on the downloaded installer
 - Follow the instructions from the installer
-- After the instalation is finished, launch the IntelliJ IDEA
+- After the installation is finished, launch the IntelliJ IDEA
 
 
 ### Clone Project
@@ -112,7 +112,7 @@ Clone the sogeti project with IntelliJ
 - In the folder where the pom.xml is run the following command 
 - First time run -> ```mvn clean test```
 
-#### Run in IntelIJ
+#### Run in IntelliJ
 - Run All tests from ```runner/TestRunner.java``` file by clicking on the Green Arrow and clicking ```Run:TestRunner```
 - Feature files can be found in the ```resources/features/``` folder
 - Run all the Scenarios in a Feature by clicking on the Green Arrows from on the left of the Feature and clicking ```Run:'Feature:FeatureName'```
