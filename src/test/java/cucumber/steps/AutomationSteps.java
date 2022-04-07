@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import services.AutomationServices;
 
 public class AutomationSteps extends BaseClass {
-
     public AutomationSteps() {
     }
 

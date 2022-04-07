@@ -1,14 +1,12 @@
 package cucumber.steps;
 
 import framework.BaseClass;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import services.CookieBannerServices;
 
 public class CookieBannerSteps extends BaseClass {
-
     public CookieBannerSteps() {
     }
 
@@ -21,5 +19,4 @@ public class CookieBannerSteps extends BaseClass {
         CookieBannerServices cookieBannerServices = new CookieBannerServices(driver);
         cookieBannerServices.clickOn(button);
     }
-
 }

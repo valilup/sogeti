@@ -10,7 +10,6 @@ import services.HeaderServices;
 import java.io.IOException;
 
 public class HeaderSteps extends BaseClass {
-
     public HeaderSteps() {
     }
 

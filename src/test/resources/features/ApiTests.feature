@@ -16,7 +16,6 @@ Feature: API Tests
     Then I verify that the "state" key has the "Baden-Württemberg" value
     Then I verify that the postal code "70597" has the place name "Stuttgart Degerloch"
 
-
     #API Tests 2
     #2. Write API Data Driven Test for http://api.zippopotam.us/{country}/{postal-code}
     #In Data Driven Test - replace "Country" and "Postal Code" in above Test URL from Test Data.

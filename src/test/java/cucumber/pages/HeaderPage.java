@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class HeaderPage extends BaseClass {
-
     @FindBy(css = "li[data-levelname='level2']")
     public WebElement servicesLink;
 

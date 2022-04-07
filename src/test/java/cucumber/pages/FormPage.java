@@ -6,18 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-
 
 public class FormPage extends BaseClass {
-    public FormPage(){}
-
-    public FormPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
-    }
-
-
-
     @FindBy(name = "__field_123927")
     public WebElement firstNameInputField;
 
@@ -47,4 +37,11 @@ public class FormPage extends BaseClass {
 
     @FindBy(css = "[aria-live='polite'][class='Form__Element__ValidationError']")
     public WebElement capchaErrorMessage;
+
+    public FormPage() {
+    }
+
+    public FormPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
 }

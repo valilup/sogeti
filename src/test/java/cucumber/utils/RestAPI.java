@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 import static io.restassured.RestAssured.given;
 
 public class RestAPI {
-
     private static final String baseUrl = "http://api.zippopotam.us/";
     private static Response response;
 

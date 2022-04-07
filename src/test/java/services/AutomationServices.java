@@ -10,7 +10,6 @@ import org.testng.Assert;
 import static cucumber.utils.Helpers.scrollTo;
 
 public class AutomationServices extends BaseClass {
-
     public AutomationServices() {
     }
 
@@ -45,6 +44,5 @@ public class AutomationServices extends BaseClass {
                 throw new Exception("Unknown element: " + element + " to scroll to");
         }
         scrollTo(elementToScrollTo);
-
     }
 }

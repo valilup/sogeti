@@ -16,8 +16,8 @@ import static cucumber.utils.Helpers.click;
 import static cucumber.utils.Helpers.hoverOn;
 
 public class HeaderServices extends BaseClass {
-
-    public HeaderServices(){}
+    public HeaderServices(){
+    }
 
     public HeaderServices(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -28,7 +28,6 @@ public class HeaderServices extends BaseClass {
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setConnectTimeout(3000);
         httpURLConnection.connect();
-
         Assert.assertEquals(httpURLConnection.getResponseCode(), 200);
     }
 
@@ -77,7 +76,6 @@ public class HeaderServices extends BaseClass {
             default:
                 throw new Exception("Unknown element to check for: " + element);
         }
-
         Assert.assertTrue(elementToCheck.getAttribute(attribute).contains(value));
     }
 
@@ -85,7 +83,6 @@ public class HeaderServices extends BaseClass {
         HeaderPage headerPage = new HeaderPage(driver);
 
         List<WebElement> links = headerPage.sogetiSpecificCountryLinks;
-
         for (int x = 0; x < links.size(); x++) {
             WebElement element = links.get(x);
             String url = element.getAttribute("href");

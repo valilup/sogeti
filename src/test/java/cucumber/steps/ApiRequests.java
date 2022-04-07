@@ -3,14 +3,12 @@ package cucumber.steps;
 import framework.BaseClass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-
 import io.restassured.response.Response;
 import org.json.simple.parser.ParseException;
 
 import static cucumber.utils.RestAPI.*;
 
 public class ApiRequests extends BaseClass {
-
     private Response response;
 
     @Given("I perform a GET request to the {string} url")

@@ -7,7 +7,6 @@ import org.testng.Assert;
 
 
 public class GeneralServices extends BaseClass {
-
     public GeneralServices() {
     }
 

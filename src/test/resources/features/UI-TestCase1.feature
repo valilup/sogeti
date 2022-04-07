@@ -21,8 +21,6 @@
         Then I verify that the "Services link" element with the "class" attribute contains "selected" value from the Header
         And I verify that the "Automation link" element with the "class" attribute contains "selected" value from the Header
 
-
-
       #Test Case 2 CANNOT BE FULLY AUTOMATED BECAUSE SELENIUM DOES NOT KNOW HOW TO INTERACT WITH CAPTCHA (SKIPPED STEP 7)
       #1. Navigate to the URL https://www.sogeti.com/
       #2. Hover over Services Link and then Click Automation link.
