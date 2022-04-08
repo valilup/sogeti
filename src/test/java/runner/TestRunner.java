@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = "src/test/resources/features",
         glue = {"cucumber/steps"},
         publish = true,
-        plugin = {"pretty","json:target/cucumber.json"})
+        plugin = {"pretty","json:target/cucumber.json"},
+        tags = "@API or @cucumber")
 public class TestRunner extends AbstractTestNGCucumberTests {
-
 }

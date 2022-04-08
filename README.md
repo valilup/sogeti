@@ -111,6 +111,8 @@ Clone the sogeti project with IntelliJ
 - Open integrated Terminal in IntelliJ
 - In the folder where the pom.xml is run the following command 
 - First time run -> ```mvn clean test```
+- Run UI tests with tags by filtering ```mvn test -Dcucumber.filter.tags="@cucumber"``` 
+- Run API tests with tags by filtering ```mvn test -Dcucumber.filter.tags="@API"``` 
 
 #### Run in IntelliJ
 - Run All tests from ```runner/TestRunner.java``` file by clicking on the Green Arrow and clicking ```Run:TestRunner```
