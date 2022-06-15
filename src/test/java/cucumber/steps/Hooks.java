@@ -13,6 +13,6 @@ public class Hooks extends BaseClass {
 
     @Before("@cucumber")
     public void testInit() {
-        SetUp();
+        setUp();
     }
 }

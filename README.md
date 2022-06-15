@@ -1,3 +1,22 @@
+# JAVA - CUCUMBER FRAMEWORK
+## This is a BDD-Cucumber framework testing a website using GUI and API tests
+#### TOOLS:
+- Maven - project builder and dependency manager
+- Java
+- Cucumber - supports behavior-driven development It allows expected software behaviors to be specified in a logical language that customers can understand
+- SeleniumWebDriver - API that gives us the possibility to interact with the browser elements 
+- TestNG - as a test runner
+- RestAssured - library for API testing
+- SimpleJson - library to parse JSON objects
+- JavaFaker - library to create fake data
+- GitHub - online repository
+- Git - version control 
+
+#TODO: 
+- Integrate the framework into a CI/CD pipeline
+- Create env file to hide sensitive data 
+
+
 # Pre-requisites
 Before building the project, please have the following tools installed:
 1. Java
