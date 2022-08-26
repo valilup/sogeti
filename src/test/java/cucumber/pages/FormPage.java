@@ -1,13 +1,18 @@
 package cucumber.pages;
 
+import com.github.javafaker.Faker;
 import framework.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import static cucumber.utils.Helpers.*;
 
 
 public class FormPage extends BaseClass {
+
     @FindBy(name = "__field_123927")
     public WebElement firstNameInputField;
 
@@ -43,5 +48,23 @@ public class FormPage extends BaseClass {
 
     public FormPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
+    }
+
+    public void completeForm() {
+        Faker faker = new Faker();
+
+        sendKeys(firstNameInputField, faker.name().firstName());
+        sendKeys(lastNameInputField, faker.name().lastName());
+        sendKeys(emailInputField, faker.name().firstName().toLowerCase() + "@mail.com");
+        sendKeys(phoneInputField, faker.phoneNumber().cellPhone());
+        sendKeys(companyInputField, faker.company().name());
+        sendKeys(messageTextAreaField, faker.harryPotter().book());
+        selectByValueFromDropdown(countryDropdown, "Romania");
+        click(iAgreeCheckbox);
+        click(submitButton);
+    }
+
+    public void verifyErrorMessage() {
+        Assert.assertTrue(capchaErrorMessage.isDisplayed());
     }
 }

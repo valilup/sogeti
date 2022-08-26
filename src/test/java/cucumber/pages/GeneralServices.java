@@ -1,4 +1,4 @@
-package services;
+package cucumber.pages;
 
 import framework.BaseClass;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +28,6 @@ public class GeneralServices extends BaseClass {
     }
 
     public void checkUrlContains(String partialUrl) {
-       Assert.assertTrue(driver.getCurrentUrl().contains(partialUrl.toLowerCase()));
+        Assert.assertTrue(driver.getCurrentUrl().contains(partialUrl.toLowerCase()));
     }
 }

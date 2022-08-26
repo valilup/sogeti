@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import services.GeneralServices;
+import cucumber.pages.GeneralServices;
 
 public class GeneralSteps extends BaseClass {
     public GeneralSteps() {
