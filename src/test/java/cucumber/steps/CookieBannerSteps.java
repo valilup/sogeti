@@ -14,9 +14,4 @@ public class CookieBannerSteps extends BaseClass {
         PageFactory.initElements(driver, this);
     }
 
-    @When("I click on the {string} button on the Cookies Banner")
-    public void iClickOnTheButtonOnTheCookiesBanner(String button) throws Exception {
-        CookieBannerPage cookieBannerPage = new CookieBannerPage(driver);
-        cookieBannerPage.clickOn(button);
-    }
 }

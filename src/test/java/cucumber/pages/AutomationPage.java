@@ -35,16 +35,7 @@ public class AutomationPage extends BaseClass {
         Assert.assertTrue(elementToCheck.isDisplayed());
     }
 
-    public void scrollToElement(String element) throws Exception {
-        WebElement elementToScrollTo;
-
-        switch (element.toLowerCase()) {
-            case "contact form":
-                elementToScrollTo = contactUsFormTitle;
-                break;
-            default:
-                throw new Exception("Unknown element: " + element + " to scroll to");
-        }
-        scrollTo(elementToScrollTo);
+    public void scrollToElement(WebElement element){
+        scrollTo(element);
     }
 }

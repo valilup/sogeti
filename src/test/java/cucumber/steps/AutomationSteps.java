@@ -20,10 +20,4 @@ public class AutomationSteps extends BaseClass {
         AutomationPage automationPage = new AutomationPage(driver);
         automationPage.verifyIsVisible(element);
     }
-
-    @When("I scroll to the {string} on the Automation Page")
-    public void iScrollToTheOnTheAutomationPage(String element) throws Exception {
-        AutomationPage automationPage = new AutomationPage(driver);
-        automationPage.scrollToElement(element);
-    }
 }

@@ -1,5 +1,7 @@
 package cucumber.steps;
 
+import cucumber.pages.CookieBannerPage;
+import cucumber.pages.HeaderServices;
 import framework.BaseClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -15,16 +17,19 @@ public class GeneralSteps extends BaseClass {
         PageFactory.initElements(driver, this);
     }
 
-    @Given("I navigate to the {string} page")
-    public void iNavigateToThePage(String site) throws Exception {
-        GeneralServices generalServices = new GeneralServices(driver);
-        generalServices.navigateTo(site);
-    }
-
     @And("I verify that the current url contains {string} text")
     public void iVerifyThatTheCurrentUrlContainsText(String partialUrl) {
         GeneralServices generalServices = new GeneralServices(driver);
         generalServices.checkUrlContains(partialUrl);
+    }
+
+    @Given("I am on the {string} page")
+    public void iAmOnThePage(String site) throws Exception {
+        GeneralServices generalServices = new GeneralServices(driver);
+        generalServices.navigateTo(site);
+
+        CookieBannerPage cookieBannerPage = new CookieBannerPage(driver);
+        cookieBannerPage.clickOn("allow all cookies");
     }
 }
 

@@ -8,8 +8,7 @@
     Feature: UI Tests
 
       Background:
-        Given I navigate to the "Sogeti homepage" page
-        When I click on the "Allow all cookies" button on the Cookies Banner
+        Given I am on the "Sogeti homepage" page
         And I hover over the "Services link" from the Header
         And I click on the "Automation link" from the Header
 
@@ -17,9 +16,13 @@
       Scenario:Test 1 - Verify that the Service and Automation are selected
         Then I verify that the "Automation header text" is visible on the Automation Page
         And I verify that the current url contains "Automation" text
+
+      @cucumber
+      Scenario: Test 1.1 - Verify that Service and Automation link are selected
         When I hover over the "Services link" from the Header
-        Then I verify that the "Services link" element with the "class" attribute contains "selected" value from the Header
-        And I verify that the "Automation link" element with the "class" attribute contains "selected" value from the Header
+        Then I verify that the Service and Automation are selected
+          | Services link   | class     | selected |
+          | Automation link | class     | selected |
 
       #Test Case 2 CANNOT BE FULLY AUTOMATED BECAUSE SELENIUM DOES NOT KNOW HOW TO INTERACT WITH CAPTCHA (SKIPPED STEP 7)
       #1. Navigate to the URL https://www.sogeti.com/
@@ -32,6 +35,5 @@
 
       @cucumber
       Scenario: Test 2 - Verify the contact form can be completed
-        When I scroll to the "contact form" on the Automation Page
-        And I complete the contact form with valid information on the Form
+        When I complete the contact form with valid information
         Then I verify that the invalid captcha error message is displayed

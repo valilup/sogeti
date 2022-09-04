@@ -3,6 +3,8 @@ package framework;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseClass {
     public static WebDriver driver;
 
@@ -16,6 +18,7 @@ public class BaseClass {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         return driver;
     }
 }
